@@ -5,13 +5,15 @@ terraform {
       version = "3.34.0"
     }
   }
-  # please put your information here!
-  # backend "azurerm" {
-  #   resource_group_name  = "sa-terraform"
-  #   storage_account_name = "saterraformdemohamza"
-  #   container_name       = "sa-terraform-demo"
-  #   key                  = "terraform.tfstate"
-  # }
+  backend "remote" {
+    organization = "deophamza"
+    workspaces {
+
+      name = "test-terraform"
+
+    }
+
+  }
 
 
 }
